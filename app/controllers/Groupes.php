@@ -30,4 +30,18 @@ class Groupes extends CBase {
 			throw new NotFound("Aucun utilisateur trouvé pour le groupe.");
 		return $users;
 	}
+	
+	public function getQuestionnaire($param){
+		if($param){
+			$groupes=Groupe::find("id=".$param);
+			foreach ($groupes as $g){
+				$quest=$g->getQuestionnaires();
+			}
+			$quest=$quest->toArray();
+		}
+	
+		if(sizeof($quest)==0)
+			$quest=null;
+		return $quest;
+	}
 }

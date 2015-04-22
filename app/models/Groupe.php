@@ -7,13 +7,14 @@ class Groupe extends Model {
 	
 	public function initialize()
 	{
-		/*$this->hasManyToMany(
+		$this->hasManyToMany(
 				"id",
 				"GroupeQuestionnaire",
 				"groupe_id", "questionnaire_id",
 				"Questionnaire",
-				"id"
-		);*/
+				"id",
+    			array('alias' => 'questionnaires')
+		);
 		
 		$this->hasManyToMany(
     			"id",
