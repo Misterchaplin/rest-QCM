@@ -48,17 +48,19 @@ class Questionnaires extends CBase {
 	
 	public function getUtilisateur($param){
 		if($param){
-			$realisation=Realisation::find("questionnaire_id=".$param);
-			/*foreach ($realisation as $r){
-				var_dump($realisation);
-				$users=$r->getUtilisateurs();
-			}*/
-			$users=$realisation->toArray();
+			$questionnaire=Questionnaire::find("id=".$param);
+			foreach ($questionnaire as $q){	
+				$groupes=$q->getGroupes();
+				foreach ($groupes as $g){
+					$users=$g->getUtilisateurs();
+				}
+			}
+			$users=$users->toArray();
 				
 		}
 	
 		if(sizeof($users)==0)
-			throw new NotFound("Aucune réalisation trouvée.");
+			throw new NotFound("Aucun utilisateur trouvée.");
 		return $users;
 	}
 	

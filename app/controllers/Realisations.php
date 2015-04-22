@@ -20,4 +20,21 @@ class Realisations extends CBase {
 	}
 	
 	
+	
+	public function getScore($param){
+		
+		if($param!=null){
+			$tab=explode("_", $param);
+			$realisation = Realisation::find("utilisateur_id =".$tab[1]." AND questionnaire_id =".$tab[0]."");
+			
+			//var_dump($questionnaires);
+			$realisation=$realisation->toArray();
+			if(sizeof($realisation)==0)
+				$realisation=null;
+			return $realisation;
+		}
+		
+	}
+	
+	
 }
