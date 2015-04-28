@@ -33,7 +33,7 @@ $app->di->setShared('session', function() {
 	$session->start();
 	return $session;
 });
-$app->addResources([Domaines::class,Groupes::class,GroupeUtilisateurs::class,
+$app->addResources([Domaines::class,Groupes::class,GroupeUtilisateurs::class,Users::class,
 		GroupeQuestionnaires::class,Questionnaires::class,Questions::class,Rangs::class,
 		Realisations::class,ReponseUtilisateurs::class,Reponses::class]);
 /*$app->addResources([Utilisateurs::class]);*/

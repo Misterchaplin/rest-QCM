@@ -1,5 +1,6 @@
 <?php
 use Phalcon\Mvc\Controller;
+use Ovide\Libs\Mvc\Rest\Exception\NotFound;
 class UsersController extends Controller {
 	private $token;
 	private function _auth($login,$password){
@@ -82,4 +83,6 @@ class UsersController extends Controller {
 		$this->session->destroy();
 		echo '{connected: false}';
 	}
+	
+	
 }

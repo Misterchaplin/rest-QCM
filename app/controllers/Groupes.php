@@ -27,7 +27,7 @@ class Groupes extends CBase {
 		}
 		
 		if(sizeof($users)==0)
-			throw new NotFound("Aucun utilisateur trouvé pour le groupe.");
+			$users=null;
 		return $users;
 	}
 	

@@ -8,6 +8,19 @@ class Utilisateur extends Model {
 	protected $prenom;
 	protected $idIrang;
 	
+	public function initialize()
+	{
+		$this->hasManyToMany(
+				"id",
+				"GroupeUtilisateur",
+				"utilisateur_id",
+				"groupe_id",
+				"Groupe",
+				"id",
+				array('alias' => 'groupes')
+		);
+	
+	}
 	
 	public function getId() {
 		return $this->id;

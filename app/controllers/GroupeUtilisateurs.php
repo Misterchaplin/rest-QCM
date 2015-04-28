@@ -9,8 +9,8 @@ class GroupeUtilisateurs extends CBase {
 	}
 	
 	protected function setObject($model, $obj) {
-		$model->setIdUtilisateur ( $obj ["idUtilisateur"] );
-		$model->setIdGroupe ( $obj ["idGroupe"] );
+		$model->setIdUtilisateur ( $obj ["utilisateur_id"] );
+		$model->setIdGroupe ( $obj ["groupe_id"] );
 	}
 	
 	public function toString() {

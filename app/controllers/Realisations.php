@@ -36,5 +36,18 @@ class Realisations extends CBase {
 		
 	}
 	
+	public function getRealisationWithQuestionnaire($param){
+		if($param!=null){
+			$realisation = Realisation::find("questionnaire_id =".$param);
+				
+			//var_dump($questionnaires);
+			$realisation=$realisation->toArray();
+			if(sizeof($realisation)==0)
+				$realisation=null;
+			return $realisation;
+		}
+		
+	}
+	
 	
 }

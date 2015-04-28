@@ -59,11 +59,11 @@ abstract class CBase extends MainRestController{
 		if($this->_isValidToken($this->request->get("token"),$this->request->get("force"))){
 	
 			$model = $modelclass::findFirst($id);
+			
 			if(!$model){
 				throw new NotFound("Mise à jour : '".$obj["id"]."' n'existe plus dans la base de données.");
 				return array();
 			}else{
-			
 				$this->setObject($model, $obj);
 				try{
 					$model->save();
