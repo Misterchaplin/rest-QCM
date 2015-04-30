@@ -5,4 +5,4 @@
 </IfModule>
 
 
-Header set Access-Control-Allow-Origin '*'
+Header set Access-Control-Allow-Origin 'http://localhost'
